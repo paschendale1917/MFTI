@@ -7,12 +7,7 @@
 
 uint32_t num = 0;
 
-uint8_t digits[10] = {
-    0,
-};
-uint16_t selected[] = {
-    0,
-};
+uint8_t digits[10] = {0,};
 
 uint16_t dig_parser(uint32_t number, uint8_t *buf);
 uint16_t summ(uint32_t number);
