@@ -14,7 +14,7 @@ int main(void)
 
     while (*(str + tt) != '.')
     {
-        if (*(str + tt) == 0x20)
+        if (*(str + tt) == 0x20) //ascii 0x20 == ' '
         {
             printf("%c", 0x20);
         }
