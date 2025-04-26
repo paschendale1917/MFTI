@@ -25,7 +25,6 @@ int main(void)
         cnt++;
     } while (numbers_in[cnt - 1] != 0x00);
     calc_formula(numbers_in, numbers_out);
-   // comparator(numbers_out, cnt);
     printf("%d", comparator(numbers_out, cnt)); // выводим нулевой элемент массива с результатами вычислений
 }
 
