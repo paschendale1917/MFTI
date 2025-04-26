@@ -15,7 +15,7 @@ int32_t numbers_out[25] = {0,};
 uint8_t cnt = 0;
 
 void calc_formula(int32_t *buf_in, int32_t *buf_out);
-int32_t comparator(int32_t *buf, uint8_t num_units);
+int32_t sorter(int32_t *buf, uint8_t num_units);
 
 int main(void)
 {
@@ -25,7 +25,7 @@ int main(void)
         cnt++;
     } while (numbers_in[cnt - 1] != 0x00);
     calc_formula(numbers_in, numbers_out);
-    printf("%d", comparator(numbers_out, cnt)); // выводим нулевой элемент массива с результатами вычислений
+    printf("%d", sorter(numbers_out, cnt)); // выводим нулевой элемент массива с результатами вычислений
 }
 
 void calc_formula(int32_t *buf_in, int32_t *buf_out)
@@ -49,7 +49,7 @@ void calc_formula(int32_t *buf_in, int32_t *buf_out)
     }
 }
 
-int32_t comparator(int32_t *buf, uint8_t num_units) // сортировка чисел бОльшим числом в начало массива
+int32_t sorter(int32_t *buf, uint8_t num_units) // сортировка чисел бОльшим числом в начало массива
 {
     for (uint8_t i = 0; i < num_units - 1; i++)
     {
