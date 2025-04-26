@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 int number[3]= {0,};
 float result=0;
 int k=0;
