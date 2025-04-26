@@ -14,6 +14,7 @@ int main(void)
 {
     scanf("%d%d", &num_a, &num_b);
     printf("%d",middle(num_a,num_b));
+    return 0;
 }
 
 uint32_t module(uint32_t number)

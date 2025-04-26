@@ -26,6 +26,7 @@ int main(void)
     } while (numbers_in[cnt - 1] != 0x00);
     calc_formula(numbers_in, numbers_out);
     printf("%d", sorter(numbers_out, cnt)); // выводим нулевой элемент массива с результатами вычислений
+    return 0;
 }
 
 void calc_formula(int32_t *buf_in, int32_t *buf_out)

@@ -13,15 +13,8 @@ int main(void)
 {
     scanf("%d", &num);
     printf("%d", module(num));
+    return 0;
 }
-
-// uint8_t module(uint32_t number)
-// {
-//     if (number & 0x80000000)
-//         return -number;
-//     else
-//         return number;
-// }
 
 uint32_t module(uint32_t number)
 {

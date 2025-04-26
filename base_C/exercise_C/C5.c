@@ -13,6 +13,7 @@ int main(void)
 {
     scanf("%d", &num);
     printf("%d",  calc(num));
+    return 0;
 }
 
 int32_t calc(int32_t number)

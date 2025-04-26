@@ -14,6 +14,7 @@ int main(void)
 {
     scanf("%d%d", &num, &pwr);
     printf("%d", mypow(num, pwr));
+    return 0;
 }
 
 uint32_t module(uint32_t number)
