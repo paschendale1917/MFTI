@@ -1,4 +1,4 @@
-// Составить функцию, которая определяет сумму всех чисел от 1 до N и привести пример ее использования. 
+// Составить функцию, которая определяет сумму всех чисел от 1 до N и привести пример ее использования.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +7,7 @@
 
 int32_t num;
 
-uint64_t calc(uint8_t);
+uint32_t calc(uint32_t);
 
 int main(void)
 {
@@ -16,8 +16,12 @@ int main(void)
     return 0;
 }
 
-uint64_t calc(uint8_t number)
+uint32_t calc(uint32_t number)
 {
-        return pow(2, number - 1);
-
+    uint32_t result = 0;
+    for (uint32_t i = 1; i <=number; i++)
+    {
+        result += i;
+    }
+    return result;
 }
