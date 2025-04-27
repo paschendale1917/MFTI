@@ -7,7 +7,7 @@
 uint8_t digit[3] = {0,};
 uint32_t number = 0;
 
-uint32_t mult(uint32_t num);
+uint32_t mult(uint16_t num);
 
 int main(void)
 {
@@ -16,7 +16,7 @@ int main(void)
     return 0;
 }
 
-uint32_t mult(uint32_t num)
+uint32_t mult(uint16_t num)
 {
     uint32_t result = 0;
     if (num > 999 || num < 0)
