@@ -12,7 +12,7 @@ uint32_t calc(uint32_t);
 int main(void)
 {
     scanf("%u", &num);
-    printf("%llu", calc(num));
+    printf("%u", calc(num));
     return 0;
 }
 
