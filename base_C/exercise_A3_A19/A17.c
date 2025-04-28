@@ -3,11 +3,14 @@
 #include <stdio.h>
 #include <stdint.h>
 
+#define ERROR         1
+#define SUCCESS       0
+
 uint32_t month_num=0;
 
 int main(void) {
     scanf("%u",&month_num);
-    if(month_num<1||month_num>12) return 1;
+    if(month_num<1||month_num>12) return ERROR;
     switch( month_num) {
     case 1:
     case 2:
@@ -30,5 +33,5 @@ int main(void) {
         printf("autumn");
         break;
     }
-    return 0;
+    return SUCCESS;
 }

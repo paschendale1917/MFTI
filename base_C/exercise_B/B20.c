@@ -6,15 +6,13 @@
 #include <math.h>
 
 uint32_t num = 0;
-uint8_t simplicity = 0; // переменная для подсчета количества делителей
 
 uint8_t searcher(uint32_t number);
 
 int main(void)
 {
     scanf("%u", &num);
-    searcher(num);
-    switch (simplicity)
+    switch (searcher(num))
     {
     case 2:
         printf("YES");
@@ -28,7 +26,7 @@ int main(void)
 
 uint8_t searcher(uint32_t number)
 {
-
+    uint8_t simplicity = 0; // переменная для подсчета количества делителей
     for (uint16_t i = 1; i <= num; i++)
     {
         if (!(num % i))

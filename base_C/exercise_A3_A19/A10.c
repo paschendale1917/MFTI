@@ -5,27 +5,27 @@
 
 #define NUM     5
 
-void min(uint8_t num);
+int32_t number[NUM]= {0,};
+
+int32_t min(int32_t *num, uint8_t num_digs);
 
 int main(void) {
-    min(NUM);
+    for(uint8_t i=0; i<NUM; i++) {
+        scanf("%d",&number[i]);
+    }
+    printf("%d",min(number,NUM));
     return 0;
 }
 
-void min(uint8_t num) {
-    if(num>255) return;
-    int32_t number[NUM]= {0,};
+int32_t min(int32_t *num, uint8_t num_digs) {
     int32_t result=0;
     uint8_t cc=1;
-    for(uint8_t i=0; i<num; i++) {
-        scanf("%d",&number[i]);
-    }
-    result=number[0];
-    while(cc<num) {
-        if(!((result-number[cc])&0x80000000)) {
-            result=number[cc];
+    result=num[0];
+    while(cc<num_digs) {
+        if(!((result-num[cc])&0x80000000)) {
+            result=num[cc];
         }
         cc+=1;
     }
-    printf("%d",result);
+   return result;
 }

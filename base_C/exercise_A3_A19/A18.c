@@ -8,10 +8,8 @@ int32_t num_s=0;
 
 int main(void) {
     scanf("%d%d",&num_f,&num_s);
-    if(num_f-num_s>0) {
-        printf("Above");
-    } else if(num_f-num_s==0) {
-        printf("Equal");
-    } else printf("Less");
+if((num_f-num_s)){
+    !((num_f-num_s)&0x80000000)? printf("Above"):printf("Less");
+} else  printf("Equal");
     return 0;
 }
