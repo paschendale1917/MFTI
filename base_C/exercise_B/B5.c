@@ -1,13 +1,16 @@
 // Ввести целое число и найти сумму его цифр.
-
+// как сделать сложение с максимальными затратами ресурсов
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <math.h>
+#define MAX_RESOURSE
 
 uint32_t num = 0;
 
-uint8_t digits[10] = {0,};
+uint8_t digits[10] = {
+    0,
+};
 
 uint16_t dig_parser(uint32_t number, uint8_t *buf);
 uint16_t summ(uint32_t number, uint8_t *buf);
@@ -15,7 +18,17 @@ uint16_t summ(uint32_t number, uint8_t *buf);
 int main(void)
 {
   scanf("%u", &num);
+#ifndef MAX_RESOURSE
+  uint32_t sum = 0;
+  while (num)
+  {
+    sum += num % 10;
+    num /= 10;
+  }
+  printf("%u", sum);
+#else
   printf("%u", summ(num, digits));
+#endif
 }
 
 // разделение числа на цифры и складирование в буфер
