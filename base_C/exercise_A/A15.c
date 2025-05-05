@@ -9,7 +9,7 @@ float calc_b(float k);
 
 int main(void) {
     scanf("%d%d%d%d",&x,&y,&xx,&yy);
-    printf("%.2f %.2f",calc_k(),calc_b(calc_k()));
+    printf("%.2f %.2f",calc_k(),calc_b(calc_k())); //заставил еще разок посчитать k)
     return 0;
 }
 
