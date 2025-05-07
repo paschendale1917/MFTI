@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include <math.h>
 
 uint32_t num = 0;
 
@@ -30,12 +29,11 @@ uint16_t dig_parser(uint32_t number, uint8_t *buf)
             counter++;
         }
     }
-    for (uint8_t i = counter; i > 0; i--)
+    temp = number;
+    for (int8_t i = counter-1; i>=0; i--)
     {
-        temp = number;
-        temp = temp / pow(10, i - 1);
-        temp %= 10;
-        buf[counter - i] = temp;
+      buf[i]  = temp%10;
+        temp/=10;
     }
     return counter;
 }

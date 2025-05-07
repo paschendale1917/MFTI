@@ -1,4 +1,4 @@
-// Написать функцию, которая возвращает среднее арифметическое двух переданных ей аргументов (параметров). int middle(int a, int b)
+// Написать функцию, которая возвращает среднее арифметическое двух переданных ей аргументов (параметров). int middle(int a, int b).Два целых не отрицательных числа 
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +7,6 @@
 int32_t num_a = 0;
 int32_t num_b = 0;;
 
-uint32_t module(uint32_t number);
 uint32_t middle(int32_t a, int32_t b);
 
 int main(void)
@@ -15,11 +14,6 @@ int main(void)
     scanf("%d%d", &num_a, &num_b);
     printf("%d",middle(num_a,num_b));
     return 0;
-}
-
-uint32_t module(uint32_t number)
-{
-    return number & 0x80000000 ? -number : number;
 }
 
 uint32_t middle(int32_t a, int32_t b)

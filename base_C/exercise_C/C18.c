@@ -19,7 +19,7 @@ int main(void)
 
 uint8_t is_digit(char c)
 {
-    if (c >= '0' && c <= '9') // если элемент массива соответсвует указанным границам(мелкий шрифт)
+    if (c >= '0' && c <= '9') // если элемент массива соответствует указанным границам
     {
         return 1;
     }
@@ -28,8 +28,8 @@ uint8_t is_digit(char c)
 uint16_t num_counter(char *buf)
 {
     uint16_t cntr = 0;
-    uint16_t num_cntr = 0;
-    while (*(buf + cntr) != '.')
+    uint16_t num_cntr = 0;   //счетчик опознанных цифр
+    while (*(buf + cntr) != '.') 
     {
         if (is_digit(*(buf + cntr)))
         {

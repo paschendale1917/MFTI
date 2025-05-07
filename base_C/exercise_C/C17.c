@@ -15,7 +15,7 @@ uint8_t is_happy_number(uint32_t n);
 int main(void)
 {
     scanf("%u", &num);
-    is_happy_number(num)?printf("YES"):printf("NO"); 
+    is_happy_number(num) ? printf("YES") : printf("NO");
 }
 
 uint16_t dig_parser(uint32_t number, uint8_t *buf)
@@ -32,12 +32,11 @@ uint16_t dig_parser(uint32_t number, uint8_t *buf)
             counter++;
         }
     }
-    for (uint8_t i = counter; i > 0; i--)
+    temp = number;
+    for (int8_t i = counter - 1; i >= 0; i--)
     {
-        temp = number;
-        temp = temp / pow(10, i - 1);
-        temp %= 10;
-        buf[counter - i] = temp;
+        buf[i] = temp % 10;
+        temp /= 10;
     }
     return counter;
 }
@@ -45,7 +44,9 @@ uint16_t dig_parser(uint32_t number, uint8_t *buf)
 uint16_t summ(uint32_t number)
 {
     uint16_t result = 0;
-    uint8_t digits[10] = {0,};
+    uint8_t digits[10] = {
+        0,
+    };
     uint16_t num_digits = dig_parser(number, digits);
     for (uint8_t i = 0; i < num_digits; i++)
     {
@@ -57,7 +58,9 @@ uint16_t summ(uint32_t number)
 uint16_t mult(uint32_t number)
 {
     uint16_t result = 0;
-    uint8_t digits[10] = {0,};
+    uint8_t digits[10] = {
+        0,
+    };
     uint16_t num_digits = dig_parser(number, digits);
     result = digits[0];
     for (uint8_t i = 1; i < num_digits; i++)

@@ -7,7 +7,7 @@
 
 int32_t num = 0;
 
-uint32_t module(uint32_t number);
+uint32_t module(int32_t number);
 
 int main(void)
 {
@@ -16,7 +16,7 @@ int main(void)
     return 0;
 }
 
-uint32_t module(uint32_t number)
+uint32_t module(int32_t number)
 {
     return number & 0x80000000 ? -number : number;
 }
