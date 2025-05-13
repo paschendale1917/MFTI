@@ -7,33 +7,33 @@
 
 uint8_t num = 0;
 uint8_t base = 0;
-uint8_t digits[5] = {
-    0,
-};
 uint8_t cntr = 0;
 
-void transfer(uint8_t n, uint8_t p);
+int32_t transfer(uint8_t n, uint8_t p);
 
 int main(void)
 {
     scanf("%u %u", &num, &base);
-    transfer(num, base);
-    for (int8_t i = cntr - 1; i >= 0; i--)
-    {
-        printf("%u", *(digits + i));
-    }
+
+    printf("%d", transfer(num, base));
+
     return 0;
 }
 
-void transfer(uint8_t n, uint8_t p)
+int32_t transfer(uint8_t n, uint8_t p)
 {
-    uint8_t temp = 0;
+    uint8_t temp = n;
     int32_t result = 0;
-    while (num)
+    while (temp)
     {
-        temp = num;
-        num /= p;
-        digits[cntr] = temp - p * num;
+        temp /= p;
         cntr++;
     }
+    for (int8_t i = 0; i < cntr; i++)
+    {
+        temp = n;                        
+        n /= p;                                          
+        result = result + pow(10, i) * (temp - p * n);
+    }
+    return result;
 }
