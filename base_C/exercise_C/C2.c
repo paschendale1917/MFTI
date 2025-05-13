@@ -1,4 +1,4 @@
-// Составить функцию, возведение числа N в степень P. int power(n, p) и привести пример ее использования.Два целых числа: N по модулю не превосходящих 1000 и P ≥ 0 
+// Составить функцию, возведение числа N в степень P. int power(n, p) и привести пример ее использования.Два целых числа: N по модулю не превосходящих 1000 и P ≥ 0
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,9 +27,11 @@ uint32_t mypow(int32_t number, int8_t power)
 {
     uint32_t result = number;
     power < 0 ? power = module(power) : power;
-    module(number) > 1000 ? printf("ERROR:number greater than 1000 or less than -1000 ") : number;
-    if (!power && !number||module(number)>1000)
-        return ERROR; 
+    if (!power && !number || module(number) > 1000)
+    {
+        printf("ERROR:number greater than 1000 or less than -1000\n ");
+        return ERROR;
+    }
     if (power > 0)
     {
         for (uint8_t i = 0; i < power - 1; i++)
