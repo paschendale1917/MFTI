@@ -6,22 +6,19 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-int32_t num = 0;
-
-void print_num(uint32_t number);
+void reverse_string(void);
 
 int main(void)
 {
-    scanf("%u", &num);
-    print_num(num);
+reverse_string();
     return 0;
 }
 
 
-void print_num(uint32_t number)
-{
-
-    if (number / 10)
-        print_num(number / 10);
-    printf("%u ", number % 10);
+void reverse_string(void){
+    char character=0;
+   if((character=getchar())!='.'){
+      reverse_string();
+    }
+   if(character!='.')putchar(character);
 }
