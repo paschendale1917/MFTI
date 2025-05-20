@@ -1,7 +1,6 @@
 // Составить рекурсивную функцию, печать всех чисел от N до 1.
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdint.h>
 
 int32_t num = 0;

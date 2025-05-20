@@ -3,7 +3,6 @@
 
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdint.h>
 
 void reverse_string(void);

@@ -1,7 +1,6 @@
 // Составить рекурсивную функцию, которая определяет сумму всех чисел от 1 до N
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdint.h>
 
 int32_t num = 0;

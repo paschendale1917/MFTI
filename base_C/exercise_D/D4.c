@@ -2,7 +2,6 @@
 // void print_num(int num)
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdint.h>
 
 int32_t num = 0;
