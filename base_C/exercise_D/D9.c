@@ -1,5 +1,5 @@
 // Дано натуральное число N. Вычислите сумму его цифр. Необходимо составить рекурсивную функцию.
-// int sum_digits(int n)
+//int sum_digits(int n)
 
 #include <stdio.h>
 #include <stdlib.h>
