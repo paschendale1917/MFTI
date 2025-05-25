@@ -52,7 +52,7 @@ void sorter(int32_t *num, uint8_t mas_size, uint8_t direction) {
           num[j + 1] = temp;
         }
       }
-    };
+    }
     break;
   }
 }
