@@ -45,7 +45,7 @@ uint32_t num = 0;
 uint8_t base = 0;
 uint8_t cntr = 0;
 
-int32_t transfer(uint8_t n, uint8_t p);
+int32_t transfer(uint32_t n, uint8_t p);
 
 int main(void)
 {
@@ -57,7 +57,7 @@ int main(void)
 }
 
 
-int32_t transfer(uint8_t n, uint8_t p)
+int32_t transfer(uint32_t n, uint8_t p)
 {
     uint8_t temp = num;
     int32_t result = 0;
