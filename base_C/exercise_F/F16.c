@@ -25,16 +25,16 @@ uint8_t arr[8][8] = {
     {WHITE, BLACK, WHITE, BLACK, WHITE, BLACK, WHITE, BLACK},
 };
 
-uint8_t string_parser(char *string);
+uint16_t string_parser(char *string);
 
 int main(void) {
 
   scanf("%s", str);
-  arr[string_parser(str)&0x02][string_parser(str)&0x01]?printf("BLACK"):printf("WHITE");
+  arr[string_parser(str)>>8][(uint8_t)string_parser(str)]?printf("BLACK"):printf("WHITE");
   return 0;
 }
 
-uint8_t string_parser(char *string) {
+uint16_t string_parser(char *string) {
   uint8_t cntr = 0;
   uint8_t x_coord = 0;
   uint8_t y_coord = 0;
@@ -43,5 +43,5 @@ uint8_t string_parser(char *string) {
     *(string + cntr) >= 'A' && *(string + cntr) <= 'H'? x_coord = *(string + cntr) - 'A' : x_coord;
     cntr++;
   }
-  return x_coord << 1 | y_coord;
+  return (uint16_t)x_coord << 8 | y_coord;
 }
