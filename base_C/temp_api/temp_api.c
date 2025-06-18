@@ -25,19 +25,19 @@ int16_t month_average_temp(record *dt, uint32_t num_meas) {
 // }
 
 //чтение/запись из файла
-void rw_data (data *dt, uint32_t num_meas, char *bin_name, uint8_t mode)
-{
-    switch(mode){
-      case read:
-        FILE* rd = fopen(bin_name,"rb");
-        fread(&(dt->measure),sizeof(dt->measure),1,rd);
-        fclose(rd);
-        break;
-      case write:
-        FILE* wr = fopen(bin_name,"wb");
-        fwrite(&(dt->measure),num_meas*sizeof(dt->measure),1,wr);
-        fclose(wr);
-        break;
-    }
+// void rw_data (data *dt, uint32_t num_meas, char *bin_name, uint8_t mode)
+// {
+//     switch(mode){
+//       case read:
+//         FILE* rd = fopen(bin_name,"rb");
+//         fread(&(dt->measure),sizeof(dt->measure),1,rd);
+//         fclose(rd);
+//         break;
+//       case write:
+//         FILE* wr = fopen(bin_name,"wb");
+//         fwrite(&(dt->measure),num_meas*sizeof(dt->measure),1,wr);
+//         fclose(wr);
+//         break;
+//     }
     
 }
