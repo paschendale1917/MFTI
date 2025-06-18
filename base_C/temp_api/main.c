@@ -14,7 +14,7 @@ record june_meas[NUM_MEAS]={2025,June,20,19,35,26,
 
 int main(void) {
   printf("%s", "It's alive!\n");
-  //printf("%d\n", NUM_MEAS);
+  printf("%d\n", NUM_MEAS);
   printf("%s: %d\n", "Average", month_average_temp(june_meas, NUM_MEAS));
   return 0;
 }
