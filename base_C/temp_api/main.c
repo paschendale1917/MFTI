@@ -1,23 +1,20 @@
 #include "temp_api.h"
 #include <stdint.h>
 #include <stdio.h>
-//#include <string.h>
-// #include <unistd.h>
+// #include <string.h>
+//  #include <unistd.h>
+
+
 
 char *version = "ver1.1";
 
-record meas[NUM_MEAS] = {0};
+data full_data;
+//record meas[NUM_MEAS] = {0};
 
-uint8_t char2num(char *p) {
-  uint8_t num = 0;
-  while (*(p) != '\000') {
-    num = num * 10 + (*p - '0');
-    p++;
-  }
-  return num;
-}
+
+
 void print_help(void) {
-  printf("\nThis is a simple temperature statistic program %s\n",version);
+  printf("\nThis is a simple temperature statistic program %s\n", version);
   printf("Supported arguments:\n");
   printf("-h                      -- help\n");
   printf("-f<filename.csv>        -- .csv file to load\n");
@@ -40,26 +37,33 @@ void args(int32_t argc, char *argv[]) {
         break;
       case 'm':
         p++;
-        *p == '\000' ? print_year_info() : print_month_info(char2num(p));
+        char2num(p, '\000') < 1 || char2num(p, '\000') > 12
+            ? printf("Unknown option: %s\n", argv[i])
+        : *p == '\000' ? print_year_info()
+                       : print_month_info(char2num(p, '\000'));
         break;
       case 'y':
         print_yearstat_info();
         break;
       case 'f':
         p++;
-        // исполняемая функция
+       // read_data(&full_data, csvbigfile_name );
         break;
       default:
         printf("Unknown option: %s", argv[i]);
         break;
       }
-    }else if (*p =='\000') {
-     print_help();
+    } else if (argc < 2) {
+      print_help();
     }
   }
 }
 
+
+
 int main(int32_t argc, char *argv[]) {
   args(argc, argv);
+ read_data(&full_data, csvbigfile_name );
+
   return 0;
 }
