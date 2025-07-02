@@ -23,7 +23,7 @@ void print_help(void) {
   printf("Supported arguments:\n");
   printf("-h                                 -- help\n");
   printf("-f <filename.csv> -m <month>       -- .csv file to load. without -m argument  will show statistics by month for the year\n");
-  printf("-y                                 -- year average, minimum and maximum temperature\n");
+ // printf("-y                                 -- year average, minimum and maximum temperature\n");
   printf("-v                                 -- version\n");
 }
 
@@ -52,18 +52,17 @@ void args(int32_t argc, char *argv[]) {
           print_month_info(&full_data,&m_data,char2num(p, '\000'));
         }
         break;
-      case 'y':
-      //  print_yearstat_info();
-        break;
+      // case 'y':
+      //   print_yearstat_info();
+      //   break;
       case 'f':
-      uint8_t t=0;
        p+=2;
-       t=get_filename(p, filename);
-       read_data(&full_data, filename);
-       if(*(p+t+1)!='-'){
-        print_yearstat_info(&full_data, &m_data);  
-       }        
-        break;
+       uint8_t t=get_filename(p, filename);  //считал наименование входного файла и подсчитал кол-во символов
+       read_data(&full_data, filename);           //считал данные из файла
+       if(*(p+t+1)!='-'){                                      //если после наименования файла нет '-', то вывожу данные за год
+        print_yearstat_info(&full_data, &m_data);  //если да, то происходит выход из свитча по брейку
+       }                                                              //и функция прыгает  в if
+        break;                                                
       default:
         printf("Unknown option: %s\n", argv[i]);
         break;
@@ -77,6 +76,10 @@ void args(int32_t argc, char *argv[]) {
 int main(int32_t argc, char *argv[]) {
   args(argc, argv);
   read_data(&full_data, csvbigfile_name);
+ // get_month_data(&full_data, &m_data,january);
+ // print_month_info(&full_data,&m_data, january);
+  print_yearstat_info(&full_data, &m_data);
+
    //print_yearstat_info(&full_data, &m_data); 
   //printf("%s\n", filename);
  // printf("%s\n%d\n", arg, u);

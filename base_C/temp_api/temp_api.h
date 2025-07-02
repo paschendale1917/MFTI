@@ -4,12 +4,19 @@
 #include <stdint.h>
 #include <stdio.h>
 
+///#define DEBUG
+
 #define NUM_MEAS_PER_MONTH  31*24*60 //максимальное количество замеров для каждого месяца
-#define NUM_MEAS            365*NUM_MEAS_PER_MONTH ///максимальное количество замеров за год, под которые мы отведем для хранения импортированных блоков данных из .csv файла
 #define STRING_LENTH        22 // длина строки с одним блоком данных, включая перенос строки и возврата каретки
-#define TEMP_ERROR         -127 // маркировка ошибки при указании температуры
+#define DATA_ERROR          -127 // маркировка ошибки
 #define ERROR               1
 #define SUCCESS             0
+
+#ifdef  DEBUG 
+  #define NUM_MEAS            100
+#else
+  #define NUM_MEAS            365*NUM_MEAS_PER_MONTH ///максимальное количество замеров за год, под которые мы отведем для хранения импортированных блоков данных из .csv файла
+#endif
 
 enum {
   january = 1,
@@ -51,7 +58,6 @@ typedef struct {
  extern data full_data;
  extern data_month m_data;
 
-// extern data_month jan, feb, mar, apr, my, jun, jul, aug, sept, oct, nov, dec;
 extern char csvfile_name[];
 extern char csvbigfile_name[];
 extern enum mode md;
